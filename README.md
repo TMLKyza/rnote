@@ -1,4 +1,8 @@
 This is a fork of the original project where I have moved the bottom and top panels respectively to the top left and top right of the screen. This way if palm rejection glitches you dont accedentally change the tool!
+Here's the result:
+![output](https://github.com/user-attachments/assets/83feff07-ffa1-4db9-94b2-70c39cda305e)
+On the left my build, on the right the original one!
+
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/flxzt/rnote/main/crates/rnote-ui/data/icons/scalable/apps/rnote.svg" width="300"></img>
