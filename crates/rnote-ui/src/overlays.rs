@@ -4,7 +4,7 @@ use crate::canvaswrapper::RnCanvasWrapper;
 use crate::{RnAppWindow, RnColorPicker, RnPenPicker, dialogs};
 use core::time::Duration;
 use gtk4::{
-    CompositeTemplate, Overlay, ProgressBar, ScrolledWindow, Widget, gio, glib, glib::clone,
+    CompositeTemplate, Overlay, ProgressBar, Widget, gio, glib, glib::clone,
     prelude::*, subclass::prelude::*,
 };
 use rnote_engine::ext::GdkRGBAExt;
@@ -35,8 +35,6 @@ mod imp {
         pub(crate) tabview: TemplateChild<adw::TabView>,
         #[template_child]
         pub(crate) sidebar_box: TemplateChild<gtk4::Box>,
-        #[template_child]
-        pub(crate) sidebar_scroller: TemplateChild<ScrolledWindow>,
         #[template_child]
         pub(crate) penssidebar: TemplateChild<RnPensSideBar>,
     }
@@ -127,9 +125,6 @@ impl RnOverlays {
         self.imp().sidebar_box.get()
     }
 
-    pub(crate) fn sidebar_scroller(&self) -> ScrolledWindow {
-        self.imp().sidebar_scroller.get()
-    }
 
     pub(crate) fn penssidebar(&self) -> RnPensSideBar {
         self.imp().penssidebar.get()

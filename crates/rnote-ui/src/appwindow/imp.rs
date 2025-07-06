@@ -688,9 +688,6 @@ impl RnAppWindow {
 
             obj.overlays().sidebar_box().set_halign(Align::Start);
             obj.overlays()
-                .sidebar_scroller()
-                .set_placement(CornerType::TopRight);
-            obj.overlays()
                 .penssidebar()
                 .brush_page()
                 .brushconfig_menubutton()
@@ -814,9 +811,6 @@ impl RnAppWindow {
                 .set_placement(CornerType::TopLeft);
 
             obj.overlays().sidebar_box().set_halign(Align::End);
-            obj.overlays()
-                .sidebar_scroller()
-                .set_placement(CornerType::TopLeft);
             obj.overlays()
                 .penssidebar()
                 .brush_page()

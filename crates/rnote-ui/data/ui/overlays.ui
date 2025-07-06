@@ -11,6 +11,8 @@
     <child>
       <object class="GtkOverlay" id="toolbar_overlay">
         <property name="overflow">hidden</property>
+
+        <!-- Progress Bar -->
         <child type="overlay">
           <object class="GtkProgressBar" id="progressbar">
             <property name="halign">fill</property>
@@ -21,36 +23,58 @@
             </style>
           </object>
         </child>
+
+        <!-- Pen and Color Picker Row -->
         <child type="overlay">
-          <object class="RnPenPicker" id="penpicker">
-            <property name="hexpand">false</property>
-            <property name="vexpand">false</property>
-            <property name="halign">center</property>
-            <property name="valign">end</property>
-            <property name="margin-top">6</property>
-            <property name="margin-bottom">18</property>
-            <property name="margin-start">6</property>
-            <property name="margin-end">6</property>
-            <style>
-              <class name="overlay_toolbar" />
-            </style>
-          </object>
-        </child>
-        <child type="overlay">
-          <object class="RnColorPicker" id="colorpicker">
-            <property name="hexpand">false</property>
-            <property name="vexpand">false</property>
-            <property name="halign">center</property>
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="halign">fill</property>
             <property name="valign">start</property>
-            <property name="margin-top">18</property>
-            <property name="margin-bottom">6</property>
-            <property name="margin-start">18</property>
-            <property name="margin-end">18</property>
-            <style>
-              <class name="overlay_toolbar" />
-            </style>
+            <property name="hexpand">true</property>
+            <property name="vexpand">false</property>
+            <property name="margin-top">6</property>
+            <property name="margin-bottom">3</property>
+            <property name="margin-start">11</property>
+            <property name="margin-end">11</property>
+
+            <!-- Color Picker (left) -->
+            <child>
+              <object class="RnColorPicker" id="colorpicker">
+                <property name="halign">end</property>
+                <property name="valign">start</property>
+                <property name="hexpand">false</property>
+                <property name="vexpand">false</property>
+                <style>
+                  <class name="overlay_toolbar" />
+                </style>
+              </object>
+            </child>
+
+            <!-- Expanding Spacer -->
+            <child>
+              <object class="GtkBox">
+                <property name="hexpand">true</property>
+                <property name="vexpand">false</property>
+              </object>
+            </child>
+
+            <!-- Pen Picker (right) -->
+            <child>
+              <object class="RnPenPicker" id="penpicker">
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="hexpand">false</property>
+                <property name="vexpand">false</property>
+                <property name="margin-top">9</property>
+                <style>
+                  <class name="overlay_toolbar" />
+                </style>
+              </object>
+            </child>
           </object>
         </child>
+
+        <!-- Sidebar Box -->
         <child type="overlay">
           <object class="GtkBox" id="sidebar_box">
             <property name="hexpand">false</property>
@@ -65,26 +89,12 @@
               <class name="overlay_toolbar_scrollable" />
             </style>
             <child>
-              <object class="GtkScrolledWindow" id="sidebar_scroller">
-                <property name="propagate-natural-width">true</property>
-                <property name="propagate-natural-height">true</property>
-                <property name="overlay-scrolling">true</property>
-                <property name="hscrollbar-policy">never</property>
-                <property name="vscrollbar-policy">automatic</property>
-                <property name="hexpand">false</property>
-                <property name="halign">fill</property>
-                <property name="vexpand">true</property>
-                <property name="valign">fill</property>
-                <property name="min-content-height">240</property>
-                <property name="window-placement">top-left</property>
-                <child>
-                  <object class="RnPensSideBar" id="penssidebar">
-                  </object>
-                </child>
-              </object>
+                  <object class="RnPensSideBar" id="penssidebar" />
             </child>
           </object>
         </child>
+
+        <!-- Tab View with Toast Overlay -->
         <child>
           <object class="AdwToastOverlay" id="toast_overlay">
             <property name="child">
@@ -114,6 +124,7 @@
             </property>
           </object>
         </child>
+
       </object>
     </child>
   </template>
